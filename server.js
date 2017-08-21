@@ -5,6 +5,65 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+=var articleone={
+    title: 'article one saibharath',
+    head: 'article one',
+    date: 'sep 5, 2016',
+    content:
+    <p>
+                        This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article. 
+                    </p>
+                    <p>
+                        This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article. 
+                    </p>
+                    <p>
+                        This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article.This is  the content for my first article. 
+                    </p>
+    
+    
+};
+function create template(data){
+    var title=data.title;
+    var.date=data.date;
+    var heading =data.heading;
+    var content=data.content;
+}
+var htmltemplate='
+<html>
+    <head>
+        <title>
+        $(title)
+        </title>
+              </head>
+            
+                    <link href="/ui/style.css" rel="stylesheet" />
+
+            <style>
+    
+            </style>
+            <body>
+                <div class="container">
+                    
+                <div>
+                    <a href="/">home</a>
+                </div>
+                <hr/>
+                <h3>
+                    $(heading)
+               </h3>
+                <div>
+                    $(date)
+                </div>
+                <div>
+                    $(content)
+                    
+                </div>
+                </div>
+       </html>
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
