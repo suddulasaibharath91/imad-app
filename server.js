@@ -30,6 +30,11 @@ function create template(data){
     var heading =data.heading;
     var content=data.content;
 }
+
+app.get('/test-db', function(req,res){
+    //make a select response
+    //return a response with the results
+});
 var htmltemplate='
 <html>
     <head>
