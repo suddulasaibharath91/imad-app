@@ -9,6 +9,7 @@ var config={
     user:'suddulasaibharath91'
     database='suddulasaibharath91'
 }
+
     
     host: 'db.imad.hasura-app.io'
     port: '5432'
