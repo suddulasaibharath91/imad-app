@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var pool=require('pg').pool;
+var crypto=require('crypto');
 var app = express();
 app.use(morgan('combined'));
 var config={
@@ -94,6 +95,18 @@ var htmltemplate='
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+
+function hash(input){
+    //how do we create hash
+    var hased=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.tostring('hex');
+}
+app.get('/hash/input', function(req,res){
+    var hashed string=hash(req.params.input,'this is-some-random-string');
+    res.send(hashedstring);
+}
+
 app.get('/article-one',function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
